@@ -11,8 +11,11 @@ gem 'devise'
 gem 'carrierwave' # setting picture in the page
 gem 'cancancan' #set access for users , admins and all
 gem 'hirb' #rails console , stack nice per attribute
-
 gem 'jquery-rails'
+
+gem 'stripe' #unique account number 
+gem 'figaro' # real with github / use with any API keys
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
