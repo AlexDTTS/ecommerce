@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'your_orders' => 'orders#your_orders'
+
   post  'add_to_cart' =>'cart#add_to_cart'
 
   get 'view_order' => 'cart#view_order'

@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
 	before_action :configure_permitted_parameters, if: :devise_controller?
 
-	before_action :categories, :brands
+	before_action :categories, :brands, :items_in_cart
 
 	helper_method :current_order
 
@@ -20,6 +20,10 @@ class ApplicationController < ActionController::Base
 		else
 			Order.new
 		end	
+	end
+
+	def items_in_cart
+		@line_items = current_order.line_items
 	end
 
 	def categories

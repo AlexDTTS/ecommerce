@@ -16,7 +16,7 @@ class CartController < ApplicationController
       session[:order_id] = @order.id
     	line_item.update(line_item_total: (line_item.quantity * line_item.product.price))
 
-    	redirect_to root_url
+    	redirect_to view_order_path
     end
   	# line_item = LineItem.new
   	# line_item.product_id = params[:product_id]
@@ -32,9 +32,6 @@ class CartController < ApplicationController
   	@line_items = current_order.line_items
   end
 
-  def your_orders
-    
-  end
 
   def delete_from_cart
   	line_item = LineItem.find(params[:line_item_id])
